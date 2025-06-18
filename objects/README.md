@@ -1,4 +1,4 @@
-
+ 
 # JavaScript Object and Array Manipulation
 
 This project demonstrates basic to intermediate JavaScript concepts including object manipulation, array operations (`map`, `reduce`, `filter`), spread/rest operators, computed properties, destructuring, and object mutation via functions.
@@ -151,7 +151,7 @@ const personObj2 = changeAgeAndReference(personObj1);
 * `personObj2` is a new object `{ name: 'John', age: 50 }`
 
 🔸 Function Context and Borrowing Methods
-###1. this Keyword in Method Context
+### 1. this Keyword in Method Context
 ```js
 const obj = {
     a: 10,
@@ -162,7 +162,7 @@ const obj = {
 };
 obj.x();
 ```
-###2. Function Borrowing with call, apply, and bind
+### 2. Function Borrowing with call, apply, and bind
 Using call
 ```js
 let printname = function(loc) {
@@ -173,14 +173,14 @@ let nm1 = { name: "js singh", age: 22 };
 let nm2 = { name: "sk singh", age: 24 };
 ```
 ### using call
-##it is called automatically
+## it is called automatically
 ```js
 printname.call(nm2, "call");
 ```
 ### Using apply (arguments as array)
-##it is called automatically
+## it is called automatically
 
-##arguments are in array.
+## arguments are in array.
 ```js
 printname.call(nm2, ["apply"]);
 ```
