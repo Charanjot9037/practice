@@ -168,7 +168,7 @@ printname.call(nm2,"call");
 
 //apply method it takes argments in array
 
-printname.call(nm2,["apply"]);
+printname.apply(nm2,["apply"]);
 
 //bind method it return a function with binded values which will be called later 
 let prtname=printname.bind(nm1,"bind");
