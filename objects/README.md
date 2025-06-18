@@ -176,9 +176,12 @@ it is called automatically
 printname.call(nm2, "call");
 ## Using apply (arguments as array)
 it is called automatically
-arguments are in araay.
+
+arguments are in array.
+
 printname.call(nm2, ["apply"]);
 ## Using bind (returns a function)
+
 let prtname = printname.bind(nm1, "bind");
 prtname(); // Executes later with bound context and arguments,called by programmer
 
