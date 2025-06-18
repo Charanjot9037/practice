@@ -177,17 +177,17 @@ it is called automatically
 ```js
 printname.call(nm2, "call");
 ```
-### apply 
+### Apply 
  it is called automatically, arguments are in array.
 ```js
-printname.call(nm2, ["apply"]);
+printname.apply(nm2, ["apply"]);
 ```
-### bind (returns a function)
+### Bind (returns a function)
 ```js
 let prtname = printname.bind(nm1, "bind");
 prtname();
 ```
-# Executes later with bound context and arguments,called by programmer
+Executes later with bound context and arguments,called by programmer
 ✅ Summary
 This script serves as a helpful reference for:
 
