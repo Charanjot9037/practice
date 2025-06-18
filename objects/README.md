@@ -151,8 +151,8 @@ const personObj2 = changeAgeAndReference(personObj1);
 * `personObj2` is a new object `{ name: 'John', age: 50 }`
 
 🔸 Function Context and Borrowing Methods
-1. this Keyword in Method Context
-
+###1. this Keyword in Method Context
+```js
 const obj = {
     a: 10,
     x: function () {
@@ -161,15 +161,17 @@ const obj = {
     },
 };
 obj.x();
-2. Function Borrowing with call, apply, and bind
+```
+###2. Function Borrowing with call, apply, and bind
 Using call
-
+```js
 let printname = function(loc) {
     console.log(this.name + " from " + loc);
 };
 
 let nm1 = { name: "js singh", age: 22 };
 let nm2 = { name: "sk singh", age: 24 };
+```
 ### using call
 ##it is called automatically
 ```js
