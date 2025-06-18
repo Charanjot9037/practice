@@ -172,12 +172,12 @@ let printname = function(loc) {
 let nm1 = { name: "js singh", age: 22 };
 let nm2 = { name: "sk singh", age: 24 };
 ```
-### using call
-## it is called automatically
+### call
+# it is called automatically
 ```js
 printname.call(nm2, "call");
 ```
-### Using apply (arguments as array)
+### apply 
 # it is called automatically
 # arguments are in array.
 ```js
