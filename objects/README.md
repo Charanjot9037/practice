@@ -163,7 +163,7 @@ const obj = {
 obj.x();
 ```
 ### 2. Function Borrowing with call, apply, and bind
-Using call
+
 ```js
 let printname = function(loc) {
     console.log(this.name + " from " + loc);
@@ -178,9 +178,8 @@ let nm2 = { name: "sk singh", age: 24 };
 printname.call(nm2, "call");
 ```
 ### Using apply (arguments as array)
-## it is called automatically
-
-## arguments are in array.
+# it is called automatically
+# arguments are in array.
 ```js
 printname.call(nm2, ["apply"]);
 ```
@@ -189,7 +188,7 @@ printname.call(nm2, ["apply"]);
 let prtname = printname.bind(nm1, "bind");
 prtname();
 ```
-##Executes later with bound context and arguments,called by programmer
+# Executes later with bound context and arguments,called by programmer
 ✅ Summary
 This script serves as a helpful reference for:
 
