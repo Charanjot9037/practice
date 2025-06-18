@@ -172,18 +172,18 @@ let printname = function(loc) {
 let nm1 = { name: "js singh", age: 22 };
 let nm2 = { name: "sk singh", age: 24 };
 ```
-### call
-# it is called automatically
+# call
+## it is called automatically
 ```js
 printname.call(nm2, "call");
 ```
-### apply 
-# it is called automatically
-# arguments are in array.
+# apply 
+## it is called automatically
+## arguments are in array.
 ```js
 printname.call(nm2, ["apply"]);
 ```
-### Using bind (returns a function)
+# bind (returns a function)
 ```js
 let prtname = printname.bind(nm1, "bind");
 prtname();
