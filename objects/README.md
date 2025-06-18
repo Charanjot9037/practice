@@ -1,244 +1,198 @@
-# What are Objects ?
-<br>
-<span class="colour" style="color:rgb(250, 250, 250)">An object can be created with figure brackets { } with an optional list of properties. A property is a \`\`\` â€œkey: valueâ€</span>
 
-<span class="colour" style="color:rgb(250, 250, 250)">`let``Â user = { [key]name: "XYZ" [value], age: 24 };`</span>
-<br>
-# How can you access, modify and delete properties of an object?
-<br>
-Let's say we have the above object "user"
+# JavaScript Object and Array Manipulation
 
-\- Access :
+This project demonstrates basic to intermediate JavaScript concepts including object manipulation, array operations (`map`, `reduce`, `filter`), spread/rest operators, computed properties, destructuring, and object mutation via functions.
 
-```
-console.log(user.name);        r
-console.log(user["name"]);     r
-```
+## 🔸 Object Operations
 
-`- Modify :`
-
-```
-user.name = "Ashima";
-```
-
--Delete :
-<br>
-```
-delete user.age;
-```
-
-<span class="flex flex-row items-center leading-none" style="box-sizing: border-box; border: 0px solid rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; display: flex; flex-direction: row; align-items: center; line-height: 1;"><code class="lang-plaintext" style="box-sizing: border-box; border: 0px solid rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; font-family: inherit; font-size: 14px; color: rgb(221, 221, 221); font-weight: 500 !important; background: transparent; border-radius: 0px; padding: 0px; line-height: inherit; --tw-text-opacity: 1; --tw-bg-opacity: 1;"></code></span>
-Q1: Deleting Function Parameter
-<br>
-```
-const func = (function(a) {
-  delete a;
-  return a;
-})(5);
-
-console.log(func); // 5
-```
-
-The parameter `a` is a local variable. `delete` has no effect on local variables.
-
-Q2: Duplicate Keys
-<br>
-```
-const obj = { a: 'one', b: 'two', a: 'three' };
-console.log(obj); // { a: "three", b: "two" }
-```
-
-The last key overwrites previous ones.
-Q3: Multiply Numeric Properties
-<br>
-```
-function multiplyByTwo(obj) {
-  for (let key in obj) {
-    if (typeof obj[key] === 'number') {
-      obj[key] *= 2;
-    }
-  }
-}
-```
-
-# Computed Properties
-<br>
-```
-let property = "firstName";
-let person = {
-  [property]: "Ashima Agarwal"
+### 1. Creating an Object
+```js
+const user = {
+    username: "jot",
+    age: 19,
+    class: "b.tech"
 };
-```
+````
 
-# Multiword Keys
-<br>
-```
-let user = {};
-user["like the video"] = true;
-console.log(user["like the video"]); // true
-```
+### 2. Accessing Object Data
 
-# Looping Over Objects
-
-```
-let user = { name: "Ashima", age: 24 };
+```js
+console.log(user.username);
 for (let key in user) {
-  console.log(key, user[key]);
+    console.log(`${key} value:${user[key]}`);
 }
 ```
 
-# Object Referencing
-<br>
-```
-let c = { greeting: 'Hey!' };
-let d = c;
-c.greeting = 'Hello';
-console.log(d.greeting); // Hello
-console.log({a:1} == {a:1}); // false
-console.log({a:1} === {a:1}); // false
+### 3. Deleting a Key
+
+```js
+delete user.class;
 ```
 
-# JSON Methods
-<br>
-### `JSON.stringify(obj, replacer)`
+### 4. Adding a Key
 
-`JSON.stringify` converts a JavaScript object into a JSON string.
-It accepts **three arguments**:
-<br>
-```
-JSON.stringify(value, replacer, space);
+```js
+user.lastname = "singh";
 ```
 
-In your case:
+### 5. Modifying a Key
 
-* `value` is `obj`
-* `replacer` is `['level', 'health']`
-* `space` is not used
-
+```js
+user.lastname = "s2";
 ```
-const obj = {
-  level: 19,
-  health: 90,
-  username: 'lydiahallie'
+
+### 6. Handling Duplicate Keys
+
+```js
+user.username = "user 2";
+```
+
+## 🔸 Array Operations
+
+### 1. Using `map` to Multiply Each Value by 10
+
+```js
+const numbers = [65, 44, 12, 4];
+const newArr = numbers.map(num => num * 10);
+```
+
+### 2. Using `reduce` to Sum Array Elements
+
+```js
+const newAr = numbers.reduce((acc, element) => acc + element);
+```
+
+### 3. Using `filter` to Return Elements at Even Indexes
+
+```js
+const age = ["10", "20", "30"];
+let age2 = age.filter((element, index) => index % 2 === 0);
+```
+
+## 🔸 Advanced Object Features
+
+### 1. Computed Properties
+
+```js
+let property = "user";
+let person = { 
+    [property]: "charanjot singh"
 };
-console.log(JSON.stringify(obj, ['level', 'health'])); // {"level":19,"health":90}
 ```
 
-#
+### 2. Multi-word Keys
 
-### ðŸ“Œ What is a Replacer?
-
-The **second argument** (replacer) can be:
-
-1. **An Array** â€” to **filter** which keys should be included in the final string
-2. **A Function** â€” to **customize** how values are converted
-
-- - -
-
-### ðŸ” In this case:
-
-```
-['level', 'health']
+```js
+let user1 = {};
+user1["like the video"] = true;
 ```
 
-This tells `JSON.stringify` to **only include these two keys**.
+### 3. Looping Through Object
 
-So, the key `"username"` is **excluded** from the output.
-
-- - -
-
-### âœ… Final Output:
-
-```
-{"level":19,"health":90}
-```
-
-Only `"level"` and `"health"` are serialized to JSON.
-
-- - -
-
-## ðŸ§ª Want to include all keys?
-
-Just remove the second argument:
-<br>
-```
-JSON.stringify(obj);
-```
-
-# Spread Operator
-<br>
-```
-[...'Lydia']; // ['L', 'y', 'd', 'i', 'a']
-
-const user = { name: 'Lydia', age: 21 };
-const admin = { admin: true, ...user };
-// { admin: true, name: "Lydia", age: 21 }
-```
-<br>
-## Destructuring and Renaming
-
-```
-const user = { name: "Ashima", age: 24 };
-const { name } = user;
-console.log(name); // Ashima
-
-const { name: myName } = { name: "Lydia" };
-console.log(myName); // Lydia
-```
-<br>
-## Rest Parameters (Function Syntax)
-
-```
-function getItems(fruitList, favoriteFruit, ...args) {
-  return [...fruitList, ...args, favoriteFruit];
+```js
+let user3 = { name: "jot", age: 20 };
+for (let key in user3) {
+    console.log(`${key}: ${user3[key]}`);
 }
-
-getItems(['banana', 'apple'], 'pear', 'orange');
-// ['banana', 'apple', 'orange', 'pear']
 ```
-<br>
-## Object Mutation via Function
 
+### 4. JSON Stringify
+
+```js
+let jsn = JSON.stringify("hello");
 ```
+
+## 🔸 Spread and Rest Operators
+
+### 1. Spread in Arrays
+
+```js
+let ar1 = [1, 2];
+let ar2 = [...ar1, 3, 4];
+```
+
+### 2. Rest Parameters in Functions
+
+```js
+function sum(...args) {
+    return args.reduce((acc, element) => acc + element);
+}
+```
+
+## 🔸 Destructuring and Renaming
+
+### 1. Destructuring
+
+```js
+const user5 = { name: "cjs", age: 20 };
+const { name } = user5;
+```
+
+### 2. Renaming During Destructuring
+
+```js
+const { name: cjs } = { name: "jot" };
+```
+
+## 🔸 Object Mutation via Function
+
+```js
 function changeAgeAndReference(person) {
-  person.age = 25;
-  person = { name: 'John', age: 50 };
-  return person;
+    person.age = 25; // This changes original object
+    person = { name: 'John', age: 50 }; // This is a new reference
+    return person;
 }
 
 const personObj1 = { name: 'Alex', age: 30 };
 const personObj2 = changeAgeAndReference(personObj1);
-
-console.log(personObj1); // { name: 'Alex', age: 25 }
-console.log(personObj2); // { name: 'John', age: 50 }
-```
-<br>
-## Deep Copy vs Shallow Copy
-
-### Shallow Copy
-
-```
-const user = { name: 'Jen', age: 26 };
-const copy = user;
-copy.age = 24;
-console.log(user.age); // 24
 ```
 
-### Deep Copy
+* `personObj1` is mutated to `{ name: 'Alex', age: 25 }`
+* `personObj2` is a new object `{ name: 'John', age: 50 }`
 
-```
-const user = { name: "Jen", age: 26 };
-const copy = JSON.parse(JSON.stringify(user));
-copy.age = 24;
-console.log(user.age); // 26
-```
-<br>
-## Cloning Techniques
+🔸 Function Context and Borrowing Methods
+1. this Keyword in Method Context
 
-```
-const obj = { a: 1, b: 2 };
+const obj = {
+    a: 10,
+    x: function () {
+        console.log(this);     // Logs the obj itself
+        console.log(this.a);   // Logs 10
+    },
+};
+obj.x();
+2. Function Borrowing with call, apply, and bind
+Using call
 
-const clone1 = Object.assign({}, obj);
-const clone2 = JSON.parse(JSON.stringify(obj));
-const clone3 = { ...obj };
-```
+let printname = function(loc) {
+    console.log(this.name + " from " + loc);
+};
+
+let nm1 = { name: "js singh", age: 22 };
+let nm2 = { name: "sk singh", age: 24 };
+## using call
+it is called automatically
+
+printname.call(nm2, "call");
+## Using apply (arguments as array)
+it is called automatically
+arguments are in araay.
+printname.call(nm2, ["apply"]);
+## Using bind (returns a function)
+let prtname = printname.bind(nm1, "bind");
+prtname(); // Executes later with bound context and arguments,called by programmer
+
+
+✅ Summary
+This script serves as a helpful reference for:
+
+Manipulating objects and arrays
+
+Using ES6+ features (spread, rest, destructuringgit)
+
+Understanding object references and mutation
+
+Applying functional array methods like map, reduce, and filter
+
+Mastering the this keyword and function borrowing with call, apply, and bind
+
